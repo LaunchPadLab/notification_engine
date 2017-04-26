@@ -40,10 +40,39 @@ bundle
 ## 2. Add medium
 
 ```
-rails g medium Email
+rails g medium Sms
 ```
 
----
++++
+
+```ruby
+module Mediums
+  class SmsMedium < NotificationEngine::Mediums::Base
+    attr_reader ::body
+
+    def after_init(args = {})
+      @phone = args[:phone]
+      @body = args.fetch(:body, parse_template(:body))
+    end
+
+    def deliver
+      # Twilio hook
+    end
+
+    def slug
+      'sms'
+    end
+
+    private
+
+    def required_attrs
+      [:sms]
+    end
+  end
+end
+```
+
++++
 
 ```ruby
 module Mediums
@@ -79,6 +108,12 @@ module Mediums
     end
   end
 end
+```
+
++++
+
+```
+rails g medium Email
 ```
 
 ---
