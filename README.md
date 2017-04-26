@@ -100,7 +100,7 @@ The only two required methods for a `Medium` are `slug` and `deliver`. You'll se
 rails g notification NewTeamMember
 ```
 
-```
+```ruby
 class NewTeamMemberNotification < NotificationEngine::Notification
   def mediums
     [:email, :sms]
@@ -143,7 +143,7 @@ en:
 
 ### 4. Wire up callback to send notifications
 
-```
+```ruby
 class User < ApplicationRecord
   after_create :send_notifications
 
@@ -157,6 +157,18 @@ class User < ApplicationRecord
     end
   end
 end
+```
+
+## Installation
+
+Gemfile:
+
+```ruby
+gem 'notification_engine'
+```
+
+```
+bundle
 ```
 
 ## License
