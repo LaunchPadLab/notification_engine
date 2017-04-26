@@ -181,3 +181,15 @@ class User < ApplicationRecord
   end
 end
 ```
+
+---
+
+## Next Up
+
+- Publish gem
+- Use for Kubo Health
+- Hopefully another project too?
+
+---
+
+## Thoughts?
