@@ -45,8 +45,6 @@ rails g medium Email
 
 ---
 
-## 2. Add medium
-
 ```ruby
 module Mediums
   class EmailMedium < NotificationEngine::Mediums::Base
@@ -90,6 +88,8 @@ end
 ```
 rails g notification NewTeamMember
 ```
+
++++
 
 ```ruby
 class NewTeamMemberNotification < NotificationEngine::Notification
