@@ -1,0 +1,17 @@
+class <%= class_name %>Notification < <%= parent_class_name %>
+  def mediums
+    [:email]
+  end
+
+  def data
+    {
+      email: 'ned@example.com',
+      recipient: {
+        name: 'Ned Stark'
+      },
+      new_user: {
+        name: 'Jon Snow'
+      }
+    }
+  end
+end
