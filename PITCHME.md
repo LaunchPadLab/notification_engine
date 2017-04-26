@@ -74,6 +74,12 @@ end
 
 +++
 
+```
+rails g medium Email
+```
+
++++
+
 ```ruby
 module Mediums
   class EmailMedium < NotificationEngine::Mediums::Base
@@ -109,13 +115,6 @@ module Mediums
   end
 end
 ```
-
-+++
-
-```
-rails g medium Email
-```
-
 ---
 
 ## 3. Add notification
